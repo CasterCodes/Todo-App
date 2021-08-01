@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="header">
       <div className="header-container">
         <div className="header-left">
           <Link to="/">Todo App</Link>
