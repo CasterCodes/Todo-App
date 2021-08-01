@@ -7,16 +7,10 @@ const Todos = () => {
       <div className="todo-container">
         <div className="todos-header">
           <div className="header-top">
-            <h2>Hello, Kevin Caster</h2>
-            <button>Logout</button>
-          </div>
-          <div className="header-bottom">
-            <p>Here is your todos summary </p>
-
             <div>
-              <button>All (5)</button>
-              <button>Completed (3)</button>
+              <h2>Hello, Kevin Caster,</h2>
             </div>
+            <button>Logout</button>
           </div>
         </div>
         <div className="todos-body">
@@ -24,11 +18,19 @@ const Todos = () => {
             <div className="todo-item">
               <h2>Walk my Dog</h2>
               <div className="todo-item-footer">
-                <button>
+                <button className="edit">
                   <Link to={`/todo/${1}`}>View</Link>
                 </button>
-                <button>Completed</button>
-                <button>Delete</button>
+                <button className="delete">Delete</button>
+              </div>
+            </div>
+            <div className="todo-item">
+              <h2>Learn React Native </h2>
+              <div className="todo-item-footer">
+                <button className="edit">
+                  <Link to={`/todo/${1}`}>View</Link>
+                </button>
+                <button className="delete">Delete</button>
               </div>
             </div>
           </div>

@@ -14,6 +14,8 @@ const AddTodo = () => {
           </div>
           <div className="form-group">
             <textarea
+              cols="8"
+              rows="8"
               placeholder="To do Description"
               className="form-textarea"></textarea>
           </div>

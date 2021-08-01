@@ -11,12 +11,13 @@ body {
   background: #fff;
   padding: 16px;
   color: "#fff";
+  border-bottom: 1px solid #0a21a8;
 }
 
 .page {
-  background-color: #ebeefc;
+  background-color: #f0f1f5f1;
   width: 70%;
-  margin: 0px auto;
+  margin: 16px auto;
 }
 
 ul {
@@ -27,6 +28,16 @@ ul {
 
 a {
   text-decoration: none;
+}
+button {
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+}
+
+button a {
+  color: white;
 }
 
 .header-container {
@@ -54,4 +65,112 @@ a {
 .header-right ul li a {
   padding: 4px 8px;
   color: #0a21a8;
+}
+
+.edit {
+  background-color: #0a21a8;
+  margin-right: 8px;
+}
+
+.go-back {
+  background-color: aqua;
+  margin-right: 8px;
+}
+
+.delete {
+  background-color: rgba(235, 83, 83, 0.856);
+}
+.complete {
+  background-color: rgb(42, 207, 42);
+  margin-right: 8px;
+}
+
+.todo-container {
+  margin-top: 8px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a21a8;
+  padding: 8px 4px;
+  color: #fff;
+}
+
+.header-top button {
+  background-color: #0a21a8;
+}
+.header-top button:hover {
+  background-color: #fff;
+  color: #0a21a8;
+}
+
+.todos-body {
+  margin-top: 20px;
+  padding: 16px 4px;
+}
+
+.todo-item {
+  background-color: #fff;
+  padding: 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 8px solid rgb(42, 207, 42);
+  margin-top: 8px;
+}
+.todo-item .todo-item-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item h2 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1rem;
+}
+
+.form-container {
+  width: 70%;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+.form-container .form-group {
+  margin: 16px 0px;
+}
+
+.form-group .form-input {
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.form-group .form-textarea {
+  width: 100%;
+  resize: none;
+}
+
+.form-input:focus {
+  border: 1px solid black;
+}
+
+.form-submit {
+  background-color: #0a21a8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.todo-container {
+  padding: 8px 16px;
 }
