@@ -1,20 +1,36 @@
+import TodoState from "./context/TodoState";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import { Login, Signup, Todo, Todos, About, AddTodo } from "./pages";
+import { IsLoggedIn, ProtectedRoutes } from "./helpers/routes";
+import useAuthListener from "./hooks/auth-listener";
 
 function App() {
+  const { user } = useAuthListener();
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Todos} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/todo/:id" component={Todo} />
-        <Route exact path="/add-todo" component={AddTodo} />
-      </Switch>
-    </Router>
+    <TodoState>
+      <Router>
+        <Navbar />
+        <Switch>
+          <IsLoggedIn user={user} loggedInPath="/" exact path="/signup">
+            <Signup />
+          </IsLoggedIn>
+          <IsLoggedIn user={user} loggedInPath="/" exact path="/login">
+            <Login />
+          </IsLoggedIn>
+          <ProtectedRoutes user={user} exact path="/">
+            <Todos />
+          </ProtectedRoutes>
+          <ProtectedRoutes user={user} exact path="/todo/:id">
+            <Todo />
+          </ProtectedRoutes>
+          <ProtectedRoutes user={user} exact path="/add-todo">
+            <AddTodo />
+          </ProtectedRoutes>
+          <Route exact path="/about" component={About} />
+        </Switch>
+      </Router>
+    </TodoState>
   );
 }
 

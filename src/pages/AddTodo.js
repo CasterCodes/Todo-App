@@ -1,6 +1,10 @@
 import React from "react";
 
+import useAuthListener from "../hooks/auth-listener";
+
 const AddTodo = () => {
+  const { user } = useAuthListener();
+  console.log(user.displayName);
   return (
     <div className="page">
       <div className="form-container">

@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import useAuthListener from "../hooks/auth-listener";
+import TodoContext from "../context/todoContext";
 
 const Todos = () => {
+  const { user } = useAuthListener();
+  const history = useHistory();
+  const { error, signout } = useContext(TodoContext);
+
+  const handleLogout = () => {
+    signout();
+    localStorage.removeItem("todo-user");
+    history.push("/login");
+  };
   return (
     <div className="page">
       <div className="todo-container">
         <div className="todos-header">
           <div className="header-top">
             <div>
-              <h2>Hello, Kevin Caster,</h2>
+              <h2>Hello,{user.displayName},</h2>
             </div>
-            <button>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </div>
         </div>
+        {error && (
+          <div className="error">
+            <p>{error}</p>
+          </div>
+        )}
         <div className="todos-body">
           <div className="todos">
             <div className="todo-item">

@@ -174,3 +174,9 @@ button a {
 .todo-container {
   padding: 8px 16px;
 }
+
+.error {
+  background-color: rgb(236, 143, 143);
+  padding: 2px 8px;
+  color: white;
+}

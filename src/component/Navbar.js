@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuthListener from "../hooks/auth-listener";
 
 const Navbar = () => {
+  const { user } = useAuthListener();
   return (
     <div className="header">
       <div className="header-container">
@@ -16,12 +18,16 @@ const Navbar = () => {
             <li>
               <Link to="/add-todo">Add Todo</Link>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">Sign Up</Link>
-            </li>
+            {!user && (
+              <>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/signup">Sign Up</Link>
+                </li>
+              </>
+            )}
 
             <li>
               <Link to="/about">About</Link>
