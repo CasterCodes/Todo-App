@@ -23,7 +23,12 @@ const Login = () => {
       LoginUser(email, password);
     }
 
-    if (signedIn) history.push("/");
+    if (signedIn) {
+      setEmail("");
+      setPassword("");
+      setError("");
+      history.push("/");
+    }
   };
   return (
     <div className="page">

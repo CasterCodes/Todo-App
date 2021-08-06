@@ -24,7 +24,7 @@ function App() {
           <ProtectedRoutes user={user} exact path="/todo/:id">
             <Todo />
           </ProtectedRoutes>
-          <ProtectedRoutes user={user} exact path="/add-todo">
+          <ProtectedRoutes user={user} exact path="/add-todo/:editId?">
             <AddTodo />
           </ProtectedRoutes>
           <Route exact path="/about" component={About} />

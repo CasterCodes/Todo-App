@@ -38,7 +38,14 @@ const Signup = () => {
       registerUser(name, email, password);
     }
 
-    if (registered) history.push("/login");
+    if (registered) {
+      setError(null);
+      setName("");
+      setPassword("");
+      setEmail("");
+      setConfirmPassword("");
+      history.push("/login");
+    }
   };
 
   return (
